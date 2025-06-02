@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Task Management App</title>
 </head>
+
 <body>
-    
+    <div class="container-1">
+        <div class="navigation-bar">
+           <div>
+             <i class="fa-solid fa-house"></i>
+             <i class="fa-solid fa-plus"></i>
+           </div>
+        </div>
+        <div class="calendar-container">
+            <div class="calendar">
+                <div class="header">
+                    <div id="prev" class="btn">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                    <div id="month-year"></div>
+                    <div id="next" class="btn">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days" id="days"></div>
+            </div>
+            <div class="task-container">
+                <div class="date-container">
+                    <div class="event-day">Tuesday</div>
+                     <div class="event-date">03 June 2025</div>
+                </div>
+            </div>
+        </div> <!-- calendar container -->
+    </div> <!-- container-1 -->
 </body>
+<script src="script.js"></script>
+
 </html>

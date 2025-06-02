@@ -1,0 +1,153 @@
+* {
+    /*Universal Reset (get rids of the spaces) */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #107dac;
+    /* border: red solid; */
+}
+
+.container-1 {
+    /* border: blue solid; */
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calendar-container {
+    /* border: red solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    height: 500px;
+    background-color: #1ebbd7;
+    border-radius: 10px;
+}
+
+.navigation-bar {
+    min-width: 50px;
+    min-height: 500px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    border-radius: 20px;
+    background-color: #1ebbd7;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-bar div {
+    padding: 15px;
+    min-height: 500px;
+    /* border: palegreen solid; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.calendar {
+    overflow: hidden;
+    background-color: #005073;
+    border-radius: 10px;
+    height: auto;
+    width: 500px;
+    color: white;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.task-container {
+    margin: 20px;
+    width: 500px;
+    height: 420px;
+    background-color: #005073;
+    border-radius: 10px;
+}
+
+
+.btn {
+    cursor: pointer;
+}
+
+#month-year {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.weekdays,
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.days {
+    height: 300px;
+}
+
+.weekdays div,
+.days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.days div {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days div:hover {
+    background-color: white;
+    color: orangered;
+}
+
+.days .today {
+    background-color: orangered;
+    color: white
+}
+
+.days .fade {
+    color: #838383;
+}
+
+.date-container {
+    /* border: red solid; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: capitalize;
+    padding: 20px;
+    color: white;
+}
+
+.date-container .event-day {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.date-container .event-date {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #b9bbca;
+}
