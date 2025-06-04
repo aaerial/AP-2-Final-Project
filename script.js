@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const monthYear = document.getElementById("month-year");
@@ -63,4 +65,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     initializeCalendar(currentDate);
+
+    
 });
+
+const singleTask = document.getElementById("single-task-day");
+const allTask = document.getElementById("all-tasks-day");
+function addTask()  {
+        singleTask.style.display = "block";
+        allTask.style.display = "none";
+        
+        const textAreaContent = document.createElement("textarea");
+        singleTask.appendChild(textAreaContent);
+
+        const asdas = document.createElement("textarea");
+        singleTask.appendChild(asdas);
+        const asdasd = document.createElement("textarea");
+        singleTask.appendChild(asdasd);
+    };
