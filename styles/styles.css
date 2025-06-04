@@ -35,6 +35,17 @@ body {
     border-radius: 10px;
 }
 
+.holiday {
+    background: #ffcccc;
+    color: #b30000;
+    border-radius: 50%;
+}
+.custom-event {
+    background: #ffe066;
+    color: #856404;
+    border-radius: 50%;
+}
+
 .calendar {
     overflow: hidden;
     background-color: #005073;
