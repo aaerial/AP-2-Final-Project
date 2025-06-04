@@ -4,16 +4,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    color: white;
 }
 
 body {
     background-color: #107dac;
     /* border: red solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .container-1 {
     /* border: blue solid; */
-    min-height: 100vh;
+    min-height: 80vh;
     min-width: 100%;
     display: flex;
     justify-content: space-around;
@@ -29,30 +33,6 @@ body {
     height: 500px;
     background-color: #1ebbd7;
     border-radius: 10px;
-}
-
-.navigation-bar {
-    min-width: 50px;
-    min-height: 500px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 40px;
-    color: white;
-    border-radius: 20px;
-    background-color: #1ebbd7;
-    display: flex;
-    align-items: center;
-}
-
-.navigation-bar div {
-    padding: 15px;
-    min-height: 500px;
-    /* border: palegreen solid; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-
 }
 
 .calendar {
@@ -135,10 +115,32 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    width: 50%;
     gap: 10px;
     text-transform: capitalize;
     padding: 20px;
     color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+.task-action {
+    display: flex;
+    flex: row;
+}
+
+.task-action button {
+    width: 50%;
+    margin: 20px;
+    background-color: #1ebbd7;
+    border: 0;
+    border-radius: 10px;
+}
+
+.task-action button i {
+    font-size: 20px;
 }
 
 .date-container .event-day {
@@ -150,4 +152,58 @@ body {
     font-size: 1rem;
     font-weight: 400;
     color: #b9bbca;
+}
+
+.title-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5%;
+    width: 100%;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.title-header img {
+    height: 35px;
+}
+
+.title-header h1 {
+    color: white;
+}
+
+.single-task-details-day {
+    padding: 0 20px;
+    width: 98%;
+    height: 70%;
+    overflow-y: auto;
+}
+
+.tasks {
+    overflow-y: auto;
+    width: 98%;
+    height: 73%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-card {
+    width: 95%;
+    height: 100px;
+    padding: 2px 7px;
+    background-color: #1ebbd7;
+    border-radius: 10px;
+    border: none;
+}
+
+.task-card h1,
+.task-card p {
+    text-align: left;
+}
+
+.task-card p {
+    height: 50%;
+    overflow: hidden;
 }

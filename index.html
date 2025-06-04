@@ -8,17 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Task Management App</title>
+    <link rel="icon" href="img/logo.svg">
+    <title>(What) To Do</title>
 </head>
 
 <body>
+    <div class="title-header"><img src="img/logo.svg" alt="logo">
+        <h1>(What) To Do</h1>
+    </div>
     <div class="container-1">
-        <div class="navigation-bar">
-           <div>
-             <i class="fa-solid fa-house"></i>
-             <i class="fa-solid fa-plus"></i>
-           </div>
-        </div>
         <div class="calendar-container">
             <div class="calendar">
                 <div class="header">
@@ -41,10 +39,255 @@
                 </div>
                 <div class="days" id="days"></div>
             </div>
-            <div class="task-container">
-                <div class="date-container">
-                    <div class="event-day">Tuesday</div>
-                     <div class="event-date">03 June 2025</div>
+            <div class="task-container" id="single-task-day" style="display: none;">
+                <div class="task-action">
+                    <div class="date-container">
+                        <div class="event-day">Tuesday</div>
+                        <div class="event-date">03 June 2025</div>
+                    </div>
+                    <button id="delete-note"> <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button id="close-note"> <i class="fa-solid fa-close"></i>
+                    </button>
+                </div>
+                <div class="single-task-details-day">
+                    <h1>Task Title</h1>
+                    <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                </div>
+            </div>
+            <div class="task-container" id="all-tasks-day">
+                <div class="task-action">
+                    <div class="date-container">
+                        <div class="event-day">Tuesday</div>
+                        <div class="event-date">03 June 2025</div>
+                    </div>
+                    <button id="add-task-calendar"> <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                </div>
+                <div class="tasks">
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+                    <button class="task-card">
+                        <h1>Note title</h1>
+                        <p>Task DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask
+                        DetailsTask DetailsTask DetailsTask DetailsTask DetailsTask Details</p>
+                    </button>
+
                 </div>
             </div>
         </div> <!-- calendar container -->
