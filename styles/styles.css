@@ -64,6 +64,7 @@ body {
 }
 
 .task-container {
+    border: green solid;
     margin: 20px;
     width: 500px;
     height: 420px;
@@ -133,17 +134,26 @@ body {
     color: white;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 button {
     cursor: pointer;
 }
 
 .task-action {
+    border: red solid;
     display: flex;
     flex: row;
+    min-height: 100px;
 }
 
 .task-action button {
-    width: 50%;
+    width: 90px;
+    height: 60px;
     margin: 20px;
     background-color: #1ebbd7;
     border: 0;
@@ -191,9 +201,10 @@ button {
 }
 
 .tasks {
+    border: yellow solid;
     overflow-y: auto;
-    width: 98%;
-    height: 73%;
+    width: 100%;
+    height: 68%;
     display: flex;
     flex-direction: column;
     align-items: center;

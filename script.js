@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentDate = new Date();
     let today = new Date();
+    eventDay.textContent = today.toLocaleDateString("en-US", { weekday: 'long' });
+    eventDate.textContent = today.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
 
     const philippineHolidays = [
         { month: 0, day: 1, name: "New Year's Day" },
@@ -66,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         monthYear.textContent = `${months[month]} ${year}`;
         daysContainer.innerHTML = '';
 
+        // Previous Month
         const prevMonthLastDay = new Date(year, month, 0).getDate();
         for (let i = firstDay; i > 0; i--) {
             const dayDiv = document.createElement("div");
@@ -74,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
             daysContainer.appendChild(dayDiv);
         }
 
+        // Current Month
         for (let i = 1; i <= lastDay; i++) {
             const dayDiv = document.createElement("div");
             dayDiv.textContent = i;
@@ -92,26 +96,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
             dayDiv.addEventListener("click", () => {
                 const clickedDate = new Date(year, month, i);
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
                 eventDay.textContent = clickedDate.toLocaleDateString("en-US", { weekday: 'long' });
-                eventDate.textContent = clickedDate.toLocaleDateString("en-US", options);
 
                 let message = "";
                 if (isHoliday(year, month, i)) {
                     const holiday = philippineHolidays.find(h => h.month === month && h.day === i);
-                    if (holiday) message += `\n🎉 ${holiday.name}`;
+                    if (holiday) message += `<br>🎉 ${holiday.name}`;
                 }
+
+                const dateStr = `${year}-${month + 1}-${i}`; // make sure dateStr is defined
                 if (customEvents[dateStr]) {
-                    message += `\n📌 ${customEvents[dateStr]}`;
+                    message += `<br>📌 ${customEvents[dateStr]}`;
                 }
-                if (message !== "") {
-                    eventDate.textContent += message;
-                }
+
+                eventDate.innerHTML = clickedDate.toLocaleDateString("en-US", options) + message;
             });
 
             daysContainer.appendChild(dayDiv);
         }
 
+        // Next Month
         const nextMonthOffset = 7 - new Date(year, month + 1, 0).getDay() - 1;
         for (let i = 1; i <= nextMonthOffset; i++) {
             const dayDiv = document.createElement("div");
