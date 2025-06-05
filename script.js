@@ -137,48 +137,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     initializeCalendar(currentDate);
+
+    document.getElementById("task-list").addEventListener("click", deleteTask);
 });
 
 function addTask() {
-  document.getElementById("add-task-modal").style.display = "flex";
+    document.getElementById("add-task-modal").style.display = "flex";
 }
 
 function closeModal() {
-  document.getElementById("add-task-modal").style.display = "none";
+    document.getElementById("add-task-modal").style.display = "none";
 }
 
 function saveTask() {
-  const titleInput = document.getElementById("task-title");
-  const descInput = document.getElementById("task-desc");
+    const titleInput = document.getElementById("task-title");
+    const descInput = document.getElementById("task-desc");
+    const title = titleInput.value.trim();
+    const desc = descInput.value.trim();
 
-  const title = titleInput.value.trim();
-  const desc = descInput.value.trim();
-
-  if (title) {
-    const taskList = document.getElementById("task-list");
-
-    const id = `todo-${Date.now()}`;
-    const li = document.createElement("li");
-    li.classList.add("todo");
-
-    li.innerHTML = `
-      <input type="checkbox" id="${id}">
-      <label class="checkbox" for="${id}">
-        <i class="fa-solid fa-check"></i>
-      </label>
-      <label for="${id}" class="todo-details">
-        ${title}
-      </label>
-      <button><i class="fa-solid fa-pen-to-square"></i></button>
-      <button><i class="fa-solid fa-trash"></i></button>
+    if (title) {
+        const taskList = document.getElementById("task-list");
+        const id = `todo-${Date.now()}`;
+        const li = document.createElement("li");
+        
+        li.classList.add("todo");
+        li.innerHTML = `
+            <div class="task-card">
+              <div>
+                <input type="checkbox" class="checkbox" id="${id}">
+              </div>
+              <div class="task-text">
+                <div><label for="${id}" class="todo-details"><h3>${title}</h3></label></div>
+                <div><label for="${id}">${desc}</label></div>   
+              </div>
+              <button class="delete-task"><i class="fa-solid fa-trash"></i></button>
+            </div>
     `;
 
-    taskList.appendChild(li);
-    closeModal();
+        taskList.appendChild(li);
+        closeModal();
 
-    titleInput.value = "";
-    descInput.value = "";
-  } else {
-    alert("Please enter a task title.");
-  }
+        titleInput.value = "";
+        descInput.value = "";
+    } else {
+        alert("Please enter a task title.");
+    }
+}
+
+function deleteTask(event) {
+    if (event.target.closest(".delete-task")) {
+        const li = event.target.closest("li");
+        if (li) {
+            li.remove();
+        }
+    }
 }

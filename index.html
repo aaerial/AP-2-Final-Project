@@ -17,90 +17,76 @@
     <img src="img/logo.svg" alt="logo" />
     <h1 style="text-transform: uppercase;">(What) To Do</h1>
   </div>
-  <div class="container-1">
-    <div class="calendar-container">
-      <div class="calendar">
-        <div class="header">
-          <div id="prev" class="btn">
-            <i class="fa-solid fa-angle-left"></i>
-          </div>
-          <div id="month-year"></div>
-          <div id="next" class="btn">
-            <i class="fa-solid fa-angle-right"></i>
-          </div>
+  <div class="main-container">
+    <div class="calendar">
+      <div class="header">
+        <div id="prev" class="btn">
+          <i class="fa-solid fa-angle-left"></i>
         </div>
-        <div class="weekdays">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
+        <div id="month-year"></div>
+        <div id="next" class="btn">
+          <i class="fa-solid fa-angle-right"></i>
         </div>
-        <div class="days" id="days"></div>
       </div>
-      <!-- <div class="task-container" id="single-task-day" style="display: block">
-        <div class="task-action">
-          <div class="date-container">
-            <div class="event-day">Tuesday</div>
-            <div class="event-date">03 June 2025</div>
-          </div>
-          <button id="delete-note"><i class="fa-solid fa-trash"></i></button>
-          <button id="close-note"><i class="fa-solid fa-close"></i></button>
+      <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+      <div class="days" id="days"></div>
+    </div>
+
+    <div class="task-container" id="all-tasks-day">
+      <div class="task-action">
+        <div class="date-container">
+          <div class="event-day" id="event-day"></div>
+          <div class="event-date" id="event-date"></div>
         </div>
-        <div class="single-task-details-day">
-          <input type="text">Task Title</input>
-          <textarea></textarea>
+        <div class="button-container">
+          <button onclick="addTask()" title="Add Task">
+            <i class="fa-solid fa-plus"></i>
+          </button>
         </div>
-      </div> -->
-      <div class="task-container" id="all-tasks-day">
-        <div class="task-action">
-          <div class="date-container">
-            <div class="event-day" id="event-day"></div>
-            <div class="event-date" id="event-date"></div>
-          </div>
-          <div class="button-container">
-            <button title="Show All Tasks">
-              <i class="fa-solid fa-list-check"></i>
-            </button>
-            <button onclick="addTask()" title="Add Task">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-        </div>
-        <div class="tasks">
-          <ul id="task-list">
-            <li class="todo">
-              <input type="checkbox" id="todo-id">
-              <label class="checkbox" for="todo-id">
-                <i class="fa-solid fa-check"></i>
-              </label>
-              <label for="todo-id" class="todo-details">
-                Test To Do
-              </label>
-              <button><i class="fa-solid fa-pen-to-square"></i></button>
-              <button><i class="fa-solid fa-trash"></i></button>
-              </input>
-            </li>
-          </ul>
-        </div>
-        <div id="add-task-modal" class="add-overlay">
-          <div class="task-inputs">
-            <h2 style="color: black;">Add Task</h2>
-            <input type="text" id="task-title" autocomplete="off" placeholder="Task Title" />
-            <textarea id="task-desc" autocomplete="off" placeholder="Task Description"></textarea>
-            <div class="task-buttons">
-              <button onclick="saveTask()">Save</button>
-              <button onclick="closeModal()">Cancel</button>
+      </div>
+
+
+      <div class="tasks">
+        <ul id="task-list">
+          <li class="todo">
+            <div class="task-card">
+              <div>
+                <input type="checkbox" class="checkbox" id="todo-id">
+              </div>
+              <div class="task-text">
+                <div><label for="todo-id" class="todo-details">
+                    <h3>Test Title</h3>
+                  </label></div>
+                <div class="description"><label for="todo-id">Test Description</label></div>
+              </div>
+              <button class="delete-task"><i class="fa-solid fa-trash"></i></button>
             </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="add-task-modal" class="add-overlay">
+        <div class="task-inputs">
+          <h2 style="color: black;">Add Task</h2>
+          <input type="text" id="task-title" autocomplete="off" placeholder="Task Title" />
+          <textarea id="task-desc" autocomplete="off" placeholder="Task Description"></textarea>
+          <div class="task-buttons">
+            <button onclick="saveTask()">Save</button>
+            <button onclick="closeModal()">Cancel</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- calendar container -->
   </div>
-  <!-- container-1 -->
+
 </body>
 <script src="script.js"></script>
 
