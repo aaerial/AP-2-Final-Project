@@ -126,12 +126,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    prevBtn.addEventListener("click", function () {
+    prevBtn.addEventListener("click", () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
         initializeCalendar(currentDate);
     });
 
-    nextBtn.addEventListener("click", function () {
+    nextBtn.addEventListener("click", () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
         initializeCalendar(currentDate);
     });
@@ -139,18 +139,46 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeCalendar(currentDate);
 });
 
-const singleTask = document.getElementById("single-task-day");
-const allTask = document.getElementById("all-tasks-day");
-
 function addTask() {
-    singleTask.style.display = "block";
-    allTask.style.display = "none";
+  document.getElementById("add-task-modal").style.display = "flex";
+}
 
-    const textArea1 = document.createElement("textarea");
-    const textArea2 = document.createElement("textarea");
-    const textArea3 = document.createElement("textarea");
+function closeModal() {
+  document.getElementById("add-task-modal").style.display = "none";
+}
 
-    singleTask.appendChild(textArea1);
-    singleTask.appendChild(textArea2);
-    singleTask.appendChild(textArea3);
-};
+function saveTask() {
+  const titleInput = document.getElementById("task-title");
+  const descInput = document.getElementById("task-desc");
+
+  const title = titleInput.value.trim();
+  const desc = descInput.value.trim();
+
+  if (title) {
+    const taskList = document.getElementById("task-list");
+
+    const id = `todo-${Date.now()}`;
+    const li = document.createElement("li");
+    li.classList.add("todo");
+
+    li.innerHTML = `
+      <input type="checkbox" id="${id}">
+      <label class="checkbox" for="${id}">
+        <i class="fa-solid fa-check"></i>
+      </label>
+      <label for="${id}" class="todo-details">
+        ${title}
+      </label>
+      <button><i class="fa-solid fa-pen-to-square"></i></button>
+      <button><i class="fa-solid fa-trash"></i></button>
+    `;
+
+    taskList.appendChild(li);
+    closeModal();
+
+    titleInput.value = "";
+    descInput.value = "";
+  } else {
+    alert("Please enter a task title.");
+  }
+}

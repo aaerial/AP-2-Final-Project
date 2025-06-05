@@ -15,7 +15,7 @@
 <body>
   <div class="title-header">
     <img src="img/logo.svg" alt="logo" />
-    <h1>(What) To Do</h1>
+    <h1 style="text-transform: uppercase;">(What) To Do</h1>
   </div>
   <div class="container-1">
     <div class="calendar-container">
@@ -61,15 +61,40 @@
             <div class="event-date" id="event-date"></div>
           </div>
           <div class="button-container">
-            <button>
+            <button title="Show All Tasks">
               <i class="fa-solid fa-list-check"></i>
             </button>
-            <button onclick="addTask()">
+            <button onclick="addTask()" title="Add Task">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
         </div>
         <div class="tasks">
+          <ul id="task-list">
+            <li class="todo">
+              <input type="checkbox" id="todo-id">
+              <label class="checkbox" for="todo-id">
+                <i class="fa-solid fa-check"></i>
+              </label>
+              <label for="todo-id" class="todo-details">
+                Test To Do
+              </label>
+              <button><i class="fa-solid fa-pen-to-square"></i></button>
+              <button><i class="fa-solid fa-trash"></i></button>
+              </input>
+            </li>
+          </ul>
+        </div>
+        <div id="add-task-modal" class="add-overlay">
+          <div class="task-inputs">
+            <h2 style="color: black;">Add Task</h2>
+            <input type="text" id="task-title" autocomplete="off" placeholder="Task Title" />
+            <textarea id="task-desc" autocomplete="off" placeholder="Task Description"></textarea>
+            <div class="task-buttons">
+              <button onclick="saveTask()">Save</button>
+              <button onclick="closeModal()">Cancel</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
